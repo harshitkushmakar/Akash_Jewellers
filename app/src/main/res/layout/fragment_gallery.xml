@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Background"
+    tools:context=".GalleryFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/bangles_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/bangles" />
+
+            <ImageView
+                android:id="@+id/earning_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/earning" />
+
+            <ImageView
+                android:id="@+id/bracelet_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/braclet" />
+
+            <ImageView
+                android:id="@+id/nath_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/nath" />
+            <ImageView
+                android:id="@+id/eleclusiveset_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/exclusiveset" />
+            <ImageView
+                android:id="@+id/chokar_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/chokar" />
+            <ImageView
+                android:id="@+id/ladies_ring_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/ladies_ring" />
+            <ImageView
+                android:id="@+id/chain_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/chain" />
+            <ImageView
+                android:id="@+id/long_set_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/long_set" />
+
+            <ImageView
+            android:id="@+id/locket_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/image_click_selector"
+            android:src="@drawable/locket" />
+
+            <ImageView
+            android:id="@+id/pendant_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/image_click_selector"
+            android:src="@drawable/pendant" />
+
+            <ImageView
+                android:id="@+id/maangtika_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/maangtika" />
+
+            <ImageView
+                android:id="@+id/mangalsutra_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/mangalsutra" />
+            <ImageView
+                android:id="@+id/necklace_image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/image_click_selector"
+                android:src="@drawable/necklace" />
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

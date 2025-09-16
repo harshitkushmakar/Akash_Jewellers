@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Akash Jewellers</string>
+    <string name="Developed">Made with ❤️ for Akash Jewellers Family  </string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="enter_mobile_number">PHONE NUMBER</string>
+    <string name="Mobile">Mobile</string>
+    <string name="_91">+91 |</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="or">OR</string>
+    <string name="sign_in_sign_up">Sign in / Sign up</string>
+    <string name="continue_with_email">Continue with Email</string>
+    <string name="sign_up_or_sign_in_description">Sign up or Sign in to get updated about realtime gold,silver prices!</string>
+    <string name="email_icon">Email icon</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="verify">VERIFY</string>
+    <string name="change">Change</string>
+    <string name="we_have_sent_6_digit_otp_to">We have sent 6 digit OTP to</string>
+    <string name="back">Back</string>
+    <string name="waiting_for_otp">Waiting for OTP....</string>
+    <string name="waiting_for_otp_dynamic">Waiting for OTP....(%d sec)</string>
+    <string name="otp_timer_finished">Resend OTP?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="enter_your_user_name">ENTER YOUR NAME</string>
+    <string name="let_me_in">Let me in</string>
+    <string name="login">LOGIN</string>
+    <string name="email_id">EMAIL ID</string>
+    <string name="create_new_account">REGISTER</string>
+    <string name="password">PASSWORD</string>
+    <string name="register">SIGN UP</string>
+    <string name="register_name">NAME</string>
+    <string name="phone_number_register">PHONE NUMBER</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="already_have_an_account_login">Already Have an Account? LOGIN</string>
+    <string name="gold">Gold</string>
+    <string name="disclaimer_in_dashboard">*Above displayed data is for information purpose only and hence can\'t be used for legal purpose or doing any sort of transaction.</string>
+    <string name="silver">Silver</string>
+    <string name="silver_upi">Silver(RTGS)</string>
+    <string name="gold_upi">Gold(RTGS)</string>
+    <string name="payment_details">Bank</string>
+    <string name="contact">Contact</string>
+    <string name="home">Home</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="update_time_date"><![CDATA[Update Time & Date]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="extra">Extra</string>
+    <string name="share_screenshot">Share Screenshot</string>
+    <string name="gallery">Catalog</string>
+    <string name="spam_folder">*If you don\'t receive the email, please check your spam folder.</string>
+    <string name="bank_upi_inc_gst">Bank/UPI inc. GST</string>
+    <string name="gst">20HFIPS7281M1ZS</string>
+    <string name="awadhesh">Awadhesh kumar seth</string>
+    <string name="updated">Updated: --</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
+

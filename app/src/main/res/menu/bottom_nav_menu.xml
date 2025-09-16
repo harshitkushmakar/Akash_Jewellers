@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Home_menu"
+        android:icon="@drawable/home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/Contact_menu"
+        android:icon="@drawable/location"
+        android:title="@string/contact" />
+    <item
+        android:id="@+id/Gallery_menu"
+        android:icon="@drawable/catalog"
+        android:title="@string/gallery" />
+    <item
+        android:id="@+id/Payment_menu"
+        android:icon="@drawable/bank"
+        android:title="@string/payment_details" />
+
+    <item
+        android:id="@+id/Logout_menu"
+        android:icon="@drawable/logout"
+        android:title="Logout" />
+</menu>
