@@ -54,6 +54,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
 
     private static final String PRICE_UPDATE_TOPIC = "price_updates";
     private EditText goldPriceEditText, silverPriceEditText, goldRTGSPriceEditText, silverRTGSPriceEditText;
+
     private TextView timestampTextView;
     AppCompatButton currentTimeButton, saveButton;
     private DatabaseReference priceUpdateNodeReference;
