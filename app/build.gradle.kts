@@ -11,8 +11,8 @@ android {
         applicationId = "com.kushmakar.akashjewellers"
         minSdk = 26
         targetSdk = 36
-        versionCode = 27
-        versionName = "2.7"
+        versionCode = 29
+        versionName = "2.9"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

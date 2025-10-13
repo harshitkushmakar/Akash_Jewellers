@@ -69,10 +69,10 @@
 
             <ImageButton
                 android:id="@+id/btn_phone"
-                android:layout_width="48sp"
-                android:layout_height="48sp"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
                 android:layout_marginEnd="20sp"
-                android:background="@drawable/mobile_number_icon"
+                android:background="@drawable/phone_call"
                 app:layout_constraintBottom_toBottomOf="@id/personal_phone_1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/personal_phone_1"
@@ -95,10 +95,10 @@
 
             <ImageButton
                 android:id="@+id/btn_whatsapp"
-                android:layout_width="57sp"
-                android:layout_height="57sp"
+                android:layout_width="65sp"
+                android:layout_height="65sp"
                 android:layout_marginEnd="14sp"
-                android:background="@drawable/icon_whatsapp"
+                android:background="@drawable/whatsapp"
                 app:layout_constraintBottom_toBottomOf="@id/personal_phone_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/personal_phone_2"

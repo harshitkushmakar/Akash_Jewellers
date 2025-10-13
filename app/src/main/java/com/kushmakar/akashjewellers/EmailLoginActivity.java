@@ -269,7 +269,7 @@ public class EmailLoginActivity extends AppCompatActivity {
 
         if (ADMIN_UID.equals(userUID)) {
             // Admin Login - Navigate to AdminDashboardActivity
-            intent = new Intent(EmailLoginActivity.this, AdminDashboardActivity.class);
+            intent = new Intent(EmailLoginActivity.this, AdminMainActivity.class);
         } else {
             // Regular User Login - Navigate to MainActivity
             intent = new Intent(EmailLoginActivity.this, MainActivity.class);

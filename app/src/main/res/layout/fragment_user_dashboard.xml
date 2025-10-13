@@ -44,7 +44,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="इस बटन पर क्लिक करके आप सीधे कीमत साझा कर सकते हैं, धन्‍यवाद ।"
+                android:text="शेयर बटन पर क्लिक करके आप सीधे कीमत साझा कर सकते हैं, धन्‍यवाद ।"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:singleLine="true"
@@ -60,7 +60,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/share_icon"/>
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/share_icon"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -73,7 +73,7 @@
                 app:layout_constraintTop_toTopOf="@+id/yellow_background"
                 app:layout_constraintBottom_toBottomOf="@+id/yellow_background">
 
-            </ImageView>
+            </ImageButton>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/gold_card"
