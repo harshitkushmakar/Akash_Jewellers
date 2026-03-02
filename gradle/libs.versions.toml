@@ -36,7 +36,7 @@ firebaseBom = "33.15.0"
 googleAuthLibrary = "1.19.0"
 jsonOrg = "20231013"
 firebaseConfig = "23.0.0"
-
+imageslideshow = "0.1.2"
 [libraries]
 
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
@@ -73,10 +73,12 @@ browser = { group = "androidx.browser", name = "browser", version.ref = "browser
 play-integrity = { group = "com.google.android.play", name = "integrity", version.ref = "playIntegrity" }
 firebase-core = { group = "com.google.firebase", name = "firebase-core", version.ref = "firebaseCore" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+imageslideshow = { module = "com.github.denzcoskun:ImageSlideshow", version.ref = "imageslideshow" }
 # Added missing libraries
 google-auth-library = { group = "com.google.auth", name = "google-auth-library-oauth2-http", version.ref = "googleAuthLibrary" }
 json-org = { group = "org.json", name = "json", version.ref = "jsonOrg" }
 firebase-config = { group = "com.google.firebase", name = "firebase-config", version.ref = "firebaseConfig" }
+play-app-update = { module = "com.google.android.play:app-update", version = "2.1.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

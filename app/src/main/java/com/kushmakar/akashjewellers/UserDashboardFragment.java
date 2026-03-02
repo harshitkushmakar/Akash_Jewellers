@@ -1,5 +1,7 @@
 package com.kushmakar.akashjewellers;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -14,10 +16,25 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.IntentSenderRequest;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
+import com.google.android.play.core.appupdate.AppUpdateOptions;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
 import com.kushmakar.akashjewellers.databinding.FragmentUserDashboardBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -31,15 +48,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 public class UserDashboardFragment extends Fragment {
 
     private static final String TAG = "UserDashboardFragment";
     private static final String PREF_LAST_LOGIN = "last_login";
-    private static final long LOGOUT_THRESHOLD = TimeUnit.DAYS.toMillis(15);
 
     // Cache keys for SharedPreferences
     private static final String PREF_GOLD_PRICE = "cached_gold_price";
@@ -56,6 +73,9 @@ public class UserDashboardFragment extends Fragment {
     private TextView scrollingText;
     private ImageButton ShareScreenshot;
 
+    private ActivityResultLauncher<IntentSenderRequest> activityResultLauncher;
+    ImageSlider imageSlider;
+
     private DatabaseReference priceUpdateNodeReference;
     private ValueEventListener priceValueEventListener;
     private SharedPreferences sharedPreferences;
@@ -63,13 +83,30 @@ public class UserDashboardFragment extends Fragment {
     private boolean isDataLoaded = false;
 
     public UserDashboardFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentUserDashboardBinding.inflate(inflater, container, false);
+
+        // INITIALIZE activityResultLauncher FIRST (before using it)
+        activityResultLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartIntentSenderForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() != RESULT_OK) {
+                            Log.d(TAG, "Update flow failed! Result code: " + result.getResultCode());
+                            // If the update is canceled or fails,
+                            // you can request to start the update again.
+                        } else {
+                            Log.d(TAG, "Update flow succeeded!");
+                        }
+                    }
+                });
+
         return binding.getRoot();
     }
 
@@ -82,7 +119,6 @@ public class UserDashboardFragment extends Fragment {
 
         // Initialize SharedPreferences
         sharedPreferences = requireActivity().getSharedPreferences("user_prefs", requireContext().MODE_PRIVATE);
-
 
         // Update the last login time
         updateLastLogin();
@@ -99,6 +135,9 @@ public class UserDashboardFragment extends Fragment {
 
         // Setup the real-time listener for price updates
         setupFirebaseListener();
+
+        // Check for in-app update (activityResultLauncher is now initialized)
+        checkForInAppUpdate();
     }
 
     private void initializeViews() {
@@ -111,15 +150,22 @@ public class UserDashboardFragment extends Fragment {
         tvSilverUpiPrice = binding.silverUpiPrice;
         tvSilverUpiUpdateTime = binding.silverUpiUpdateTime;
         scrollingText = binding.ScrollingText;
-        ShareScreenshot = binding.shareIcon; // Make sure this matches your binding ID
-
+        ShareScreenshot = binding.shareIcon;
+        imageSlider = binding.imageSlider;
         scrollingText.setSelected(true);
 
         // Set click listener for screenshot sharing
         ShareScreenshot.setOnClickListener(v -> shareScreenshot());
+
+        List<SlideModel> imageList = new ArrayList<>();
+        imageList.add(new SlideModel(R.drawable.slider_holi, ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slider_4, ScaleTypes.CENTER_CROP));
+
+
+        // Set images to slider
+        imageSlider.setImageList(imageList);
     }
 
-    // Method to capture and share screenshot
     private void shareScreenshot() {
         try {
             // Find the scrollable view (adjust this based on your layout structure)
@@ -501,7 +547,35 @@ public class UserDashboardFragment extends Fragment {
         Log.d(TAG, "Prices cached successfully");
     }
 
+    private void checkForInAppUpdate() {
+        AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(requireContext());
 
+        // Returns an intent object that you use to check for an update.
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+
+        // Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+
+                Log.d(TAG, "Update available! Starting update flow...");
+
+                try {
+                    // Request the update (activityResultLauncher is now properly initialized)
+                    appUpdateManager.startUpdateFlowForResult(
+                            appUpdateInfo,
+                            activityResultLauncher,
+                            AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build());
+                } catch (Exception e) {
+                    Log.e(TAG, "Error starting update flow", e);
+                }
+            } else {
+                Log.d(TAG, "No update available or update not allowed");
+            }
+        }).addOnFailureListener(e -> {
+            Log.e(TAG, "Error checking for updates", e);
+        });
+    }
 
     private void updateLastLogin() {
         SharedPreferences.Editor editor = sharedPreferences.edit();

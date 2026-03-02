@@ -11,8 +11,8 @@ android {
         applicationId = "com.kushmakar.akashjewellers"
         minSdk = 26
         targetSdk = 36
-        versionCode = 29
-        versionName = "2.9"
+        versionCode = 44
+        versionName = "4.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -99,5 +99,8 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.google.auth.library)
     implementation(libs.json.org)
+    implementation(libs.imageslideshow)
+    implementation(libs.play.app.update)
+
 
 }

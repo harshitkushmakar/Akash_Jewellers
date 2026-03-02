@@ -19,16 +19,27 @@
             android:layout_height="wrap_content"
             android:id="@+id/main_layout">
 
-            <ImageView
-                android:id="@+id/Header_image"
+<!--            <ImageView-->
+<!--                android:id="@+id/Header_image"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="271dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/visiting_card"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!-- ImageSlideshow Library -->
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
                 android:layout_width="0dp"
                 android:layout_height="271dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/visiting_card"
+                app:iss_auto_cycle="true"
+                app:iss_period="3000"
+                app:iss_delay="0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <View
                 android:id="@+id/yellow_background"
                 android:layout_width="0dp"
@@ -37,7 +48,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Header_image" />
+                app:layout_constraintTop_toBottomOf="@+id/image_slider" />
 
             <TextView
                 android:id="@+id/Scrolling_text"
@@ -87,7 +98,7 @@
                 app:cardElevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Header_image">
+                app:layout_constraintTop_toBottomOf="@+id/image_slider">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
