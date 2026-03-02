@@ -157,6 +157,7 @@ public class UserDashboardFragment extends Fragment {
         // Set click listener for screenshot sharing
         ShareScreenshot.setOnClickListener(v -> shareScreenshot());
 
+
         List<SlideModel> imageList = new ArrayList<>();
         imageList.add(new SlideModel(R.drawable.slider_holi, ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel(R.drawable.slider_4, ScaleTypes.CENTER_CROP));
