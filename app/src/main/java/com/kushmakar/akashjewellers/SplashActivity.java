@@ -191,8 +191,6 @@ public class SplashActivity extends AppCompatActivity {
 
             if (staySignedInPref && USER_TYPE_ADMIN.equals(userType)) {
                 // Admin user auto-login - bypass policy check
-                Intent intent = new Intent(SplashActivity.this, AdminDashboardActivity.class);
-                startActivity(intent);
                 finish();
 
             } else {

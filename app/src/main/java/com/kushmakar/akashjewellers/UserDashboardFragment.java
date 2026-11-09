@@ -159,8 +159,10 @@ public class UserDashboardFragment extends Fragment {
 
 
         List<SlideModel> imageList = new ArrayList<>();
-        imageList.add(new SlideModel(R.drawable.slider_holi, ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel(R.drawable.slider_4, ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slider_diwali, ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slider_ad, ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slider_1, ScaleTypes.CENTER_CROP));
+
 
 
         // Set images to slider

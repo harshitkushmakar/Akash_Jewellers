@@ -10,9 +10,9 @@ android {
     defaultConfig {
         applicationId = "com.kushmakar.akashjewellers"
         minSdk = 26
-        targetSdk = 36
-        versionCode = 44
-        versionName = "4.4"
+        targetSdk = 37
+        versionCode = 53
+        versionName = "5.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
